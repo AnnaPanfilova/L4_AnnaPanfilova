@@ -45,7 +45,7 @@ class Car {
     }
     
     func printParams() {
-        print(self)
+        print("brand: \(brand), model: \(model), color: \(color), volume: \(volume), buildYear: \(buildYear), trunkSize: \(trunkSize), engineStarted: \(engineStarted), windowOpened: \(windowOpened), trunkSizeUsed: \(trunkSizeUsed)")
     }
 }
 
@@ -63,9 +63,14 @@ class SportCar: Car {
         
 
     }
+    
+    override func printParams() {
+        print("roofHinged: \(roofHinged), nitroSwitchedOn: \(nitroSwitchedOn)")
+        super.printParams()
+    }
 }
 
-class TrackCar: Car {
+class TrunkCar: Car {
     var trailerAttached: Bool
     var middleWheelRaised: Bool
     
@@ -113,4 +118,28 @@ class TrackCar: Car {
             break;
         }
     }
+    
+    override func printParams() {
+        print("trailerAttached: \(trailerAttached), middleWheelRaised: \(middleWheelRaised)")
+        super.printParams()
+    }
 }
+
+
+var maz = TrunkCar(brand: "MAZ", model: "456", color: .blue, volume: 6.0, buildYear: 2000, trunkSize: 12.0, engineStarted: false, windowOpened: false, trunkSizeUsed: 6.0, trailerAttached: false, middleWheelRaised: false)
+
+var kamaz = TrunkCar(brand: "KAMAZ", model: "1102", color: .red, volume: 6.5, buildYear: 2005, trunkSize: 16.0, engineStarted: false, windowOpened: false, trunkSizeUsed: 0.0, trailerAttached: true, middleWheelRaised: false)
+
+var lada = SportCar(brand: "VAZ", model: "Kalina Sport", color: .yellow, volume: 2.0, buildYear: 2018, trunkSize: 0.5, engineStarted: true, windowOpened: true, trunkSizeUsed: 0.05, roofHinged: true, nitroSwitchedOn: false)
+
+var ferrari = SportCar(brand: "Ferrari", model: "Portofino", color: .magenta, volume: 5.0, buildYear: 2019, trunkSize: 0.3, engineStarted: true, windowOpened: true, trunkSizeUsed: 0.01, roofHinged: false, nitroSwitchedOn: false)
+
+maz.manipulateCar(manipulation: .attachTrailer)
+lada.manipulateCar(manipulation: .hingRoof)
+kamaz.manipulateCar(manipulation: .downMiddleWheel)
+ferrari.manipulateCar(manipulation: .switchOnNitro)
+
+maz.printParams()
+lada.printParams()
+kamaz.printParams()
+ferrari.printParams()
