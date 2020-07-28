@@ -55,11 +55,12 @@ class SportCar: Car {
     var nitroSwitchedOn: Bool
     
     init(brand: String, model: String, color: Color, volume: Double, buildYear: Int, trunkSize: Double, engineStarted: Bool, windowOpened: Bool, trunkSizeUsed: Double, roofHinged: Bool, nitroSwitchedOn: Bool) {
-
-        super.init(brand: brand, model: model, color: color, volume: volume, buildYear: buildYear, trunkSize: trunkSize, engineStarted: engineStarted, windowOpened: windowOpened, trunkSizeUsed: trunkSizeUsed)
         
         self.roofHinged = roofHinged
         self.nitroSwitchedOn = nitroSwitchedOn
+        
+        super.init(brand: brand, model: model, color: color, volume: volume, buildYear: buildYear, trunkSize: trunkSize, engineStarted: engineStarted, windowOpened: windowOpened, trunkSizeUsed: trunkSizeUsed)
+        
 
     }
 }
@@ -70,10 +71,11 @@ class TrackCar: Car {
     
      init(brand: String, model: String, color: Color, volume: Double, buildYear: Int, trunkSize: Double, engineStarted: Bool, windowOpened: Bool, trunkSizeUsed: Double, trailerAttached: Bool, middleWheelRaised: Bool) {
 
-         super.init(brand: brand, model: model, color: color, volume: volume, buildYear: buildYear, trunkSize: trunkSize, engineStarted: engineStarted, windowOpened: windowOpened, trunkSizeUsed: trunkSizeUsed)
-         
          self.trailerAttached = trailerAttached
          self.middleWheelRaised = middleWheelRaised
+        
+         super.init(brand: brand, model: model, color: color, volume: volume, buildYear: buildYear, trunkSize: trunkSize, engineStarted: engineStarted, windowOpened: windowOpened, trunkSizeUsed: trunkSizeUsed)
+         
 
      }
     
